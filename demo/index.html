@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Sprite Animation by Seb Ashton</title>
-	
+	<script src="../script/animation.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
 	<style type="text/css">
 		
@@ -16,20 +17,42 @@
 			text-shadow: -1px 1px #12a4d1, -2px 2px #12a4d1;
 		}
 
-		#sprite {
-			height: 100px;
-			width: 50px;
+		p {
+			text-align: center;
+		}
+
+		#sprite-explosion {
+			background: url(sprite/explosion.png) 0 0 no-repeat;
+			height: 128px;
+			margin: 0 auto;
+			width: 128px;
 		}
 	</style>
 </head>
 <body>
 	
 	<h1>Sprite Animation</h1>
+	<div id="sprite-explosion"></div>
 	<p>
 		Built by Seb Ashton
 	</p>
 	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		var explosionArray = [
+													[0,0],[-128,0],[-256,0],[-384,0],[-512,0],[-640,0],[-768,0],[-896,0],
+													[0,-128],[-128,-128],[-256,-128],[-384,-128],[-512,-128],[-640,-128],[-768,-128],[-896,-128],
+													[0,-256],[-128,-256],[-256,-256],[-384,-256],[-512,-256],[-640,-256],[-768,-256],[-896,-256],
+													[0,-384],[-128,-384],[-256,-384],[-384,-384],[-512,-384],[-640,-384],[-768,-384],[-896,-384],
+													[0,-512],[-128,-512],[-256,-512],[-384,-512],[-512,-512],[-640,-512],[-768,-512],[-896,-512],
+													[0,-640],[-128,-640],[-256,-640],[-384,-640],[-512,-640],[-640,-640],[-768,-640],[-896,-640],
+													[0,-768],[-128,-768],[-256,-768],[-384,-768],[-512,-768],[-640,-768],[-768,-768],[-896,-768],
+													[0,-896],[-128,-896],[-256,-896],[-384,-896]
+													];
+		var explosion = new Animation("sprite-explosion", explosionArray, 100);
+		explosion.start();
 		
+		console.log(explosion);
+	});
 	</script>
 </body>
 </html>

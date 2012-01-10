@@ -30,7 +30,7 @@ Animation = (function() {
     return this.active = false;
   };
   Animation.prototype.setBackground = function(x, y) {
-    return this.elem.style.backgroundPosition = '' + x + ' ' + y + '';
+    return this.elem.style.backgroundPosition = '' + x.toString() + 'px ' + y.toString() + 'px';
   };
   Animation.prototype.iterate = function() {
     var newIt;
