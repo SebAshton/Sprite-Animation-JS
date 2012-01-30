@@ -1,3 +1,9 @@
+
+The GNU License
+
+http://www.gnu.org/licenses/gpl.html
+
+
 The MIT License (MIT)
 
 Copyright (c) 2012 Seb Ashton

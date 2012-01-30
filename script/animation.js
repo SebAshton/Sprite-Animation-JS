@@ -1,3 +1,17 @@
+
+
+/**
+ * Sprite Animation JS
+ *
+ * https://github.com/SebAshton/Sprite-Animation-JS
+ *
+ * Copyright (c) 2012 Seb Ashton
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+
 var Animation;
 Animation = (function() {
   function Animation(id, array, intervalRate) {
