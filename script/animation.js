@@ -14,8 +14,13 @@
 
 var Animation;
 Animation = (function() {
-  function Animation(id, array, intervalRate) {
+  function Animation(id, array, intervalRate, infinite) {
     var self;
+    if (infinite != null && infinite != 'undefined') {
+      this.infinite = infinite;
+    } else {
+      this.infinite = true;
+    };
     this.id = id;
     this.array = array;
     this.intervalRate = intervalRate;
@@ -40,6 +45,7 @@ Animation = (function() {
   };
   Animation.prototype.stop = function() {
     clearInterval(this.timer);
+    this.setIterate(parseInt(0));
     this.timer = null;
     return this.active = false;
   };
@@ -49,7 +55,7 @@ Animation = (function() {
   Animation.prototype.iterate = function() {
     var newIt;
     if (this.arrIt === this.arrSize) {
-      return this.setIterate(parseInt(0));
+      return (this.infinite) ? this.stop() : this.setIterate(parseInt(0));
     } else {
       newIt = parseInt(this.arrIt) + 1;
       return this.setIterate(newIt);
