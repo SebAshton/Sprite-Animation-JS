@@ -2,12 +2,12 @@
 
 /* START edit */
 
-$imgWidth = 159;
-$imgHeight = 149;
+$imgWidth = 16;
+$imgHeight = 42;
 
-$spriteCount = 148;
-$spriteWidth = 1908;
-$spriteHeight = 1937;
+$spriteCount = 55;
+$spriteWidth = 881;
+$spriteHeight = 42;
 
 /* END edit */
 
@@ -18,7 +18,8 @@ $spriteItt = $spriteCount - 1;
 echo '[';
 
 for ($i = 0; $i < $spriteHeight; $i=$i+$imgHeight) {
-    for ($j = 0; $j < $spriteWidth; $j=$j+$imgWidth) {
+	for ($j = 0; $j < $spriteWidth; $j=$j+$imgWidth) {
+    #for ($j = $spriteWidth-$imgWidth; $j >= 0; $j=$j-$imgWidth) {
     	if ($s < $spriteCount){
      		echo '[-'.$j.',-'.$i.']';
     		if ( $s < $spriteItt ){
